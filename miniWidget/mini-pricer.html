@@ -1,0 +1,818 @@
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"
+/>
+<div class="ui {{dynamicTheme}} card" id="priceQuoteId">
+    <div class="content">
+        <div class="header {{dynamicTheme}}">Instant Rate Quote</div>
+    </div>
+    <div class="mainFrm content">
+        <div class="inline fields">
+            <div class="field">
+                <label>Name</label>
+                <div class="ui input">
+                    <input
+                        type="text"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="field">
+                <label>Email</label>
+                <div class="ui input">
+                    <input
+                        type="text"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="field">
+                <label>Phone Number</label>
+                <div class="ui input">
+                    <input
+                        type="text"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="field">
+                <label>Loan Purpose</label> <select
+                    ng-model="shareRate.miniPricerPref.search.loanPurpose"
+                    ng-options="o.key as o.label for o in loanPurposeTypes"
+                ></select>
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="field">
+                <label>Property Type</label> <select
+                    ng-model="shareRate.miniPricerPref.search.propertyType"
+                    ng-options="o.key as o.label for o in ::propertyTypes"
+                ></select>
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="field">
+                <label>Occupancy</label> <select
+                    ng-model="shareRate.miniPricerPref.search.propertyUse"
+                    ng-options="o.key as o.label for o in propertyUseTypes"
+                ></select>
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="field">
+                <label>Home Value</label>
+                <div class="ui input">
+                    <input ng-model="shareRate.miniPricerPref.search.homeValue"
+                        format="currencyNoCents" type="text"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="field">
+                <label>Loan Amount</label>
+                <div class="ui input">
+                    <input ng-model="shareRate.miniPricerPref.search.amount"
+                        format="currencyNoCents" type="text"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="field">
+                <label>Zip</label>
+                <div class="ui input">
+                    <input ng-model="shareRate.miniPricerPref.search.zip"
+                        type="text"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="field">
+                <label>Credit Score</label> <select
+                    ng-model="shareRate.miniPricerPref.search.fico"
+                    ng-options="o.key as o.label for o in ::ficoRange"
+                ></select>
+            </div>
+        </div>
+    </div>
+    <div class="extra content">
+      <button id="getRates" class="ui {{dynamicTheme}} right floated button" ng-click="searchFunction()">
+          Get Rates
+      </button>
+    </div>
+</div>
+<div id="lpModalThanksSubmitContact" class="ui modal" style="padding: 1em 1em 1em 1em; z-index: 10000">
+    <i class="close icon"></i>
+    <div class="content" style="color:{{dynamicTheme}}">Your selection has been submitted.</div>
+</div>
+<div id="lpModalContact" class="ui modal" style="padding: 1em 1em 1em 1em; z-index: 10000">
+    <i class="close icon"></i>
+    <div class="header {{dynamicTheme}}">{{shareRate.miniPricerPref.dlgTitle}}</div>
+    <div class="content">
+      <!--   <p style="color: grey">
+        {{shareRate.miniPricerPref.dlgMsg}}
+        </p> -->
+        <div class="sixteen wide column"  style="color: grey" dynamic="shareRate.miniPricerPref.dlgMsg">
+        </div>
+
+
+        <div class="ui three column middle aligned very relaxed stackable grid" style="margin-top:0px">
+            <div class="column">
+                <div class="mainFrm ui form content">
+                    <div class="fields">
+                        <div class="field">
+                            <label ng-class="{'error': error}">First Name *</label>
+                            <div class="ui input">
+                                <input ng-model="model.firstname" type="text"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="field">
+                            <label ng-class="{'error': error}">Last Name *</label>
+                            <div class="ui input">
+                                <input ng-model="model.lastname" type="text"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="field">
+                            <div class="field">
+                                <label ng-class="{'error': error}">Email *</label>
+                                <div class="ui input">
+                                    <input ng-model="model.email" type="text"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="field">
+                            <div class="field">
+                                <label ng-class="{'error': error}">Phone *</label>
+                                <div class="ui input">
+                                    <input type="tel" ng-model="model.phone" maxlength="14"
+                                                            international-phone-number national-mode='true'
+                                                            only-countries="us" auto-hide-dial-code='true'
+                                                            ng-model="data[prop]" placeholder="(XXX) XXX-XXXX" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="mainFrm content ui form">
+                    <div class="fields">
+                        <div class="field">
+                            <label>Street Address</label>
+                            <div class="ui input">
+                                <input ng-model="model.propertyAddress.street" type="text"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="field">
+                            <label>Street Cont</label>
+                            <div class="ui input">
+                                <input ng-model="model.propertyAddress.streetCont" type="text"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="field">
+                            <label>City</label>
+                            <div class="ui input">
+                                <input ng-model="model.propertyAddress.city" type="text"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="two fields">
+                        <div class="field">
+                            <label>State</label>
+                            <select
+                                ng-model="model.propertyAddress.state"
+                                ng-options="o.code as o.code for o in ::states"
+                            ></select>
+                        </div>
+
+                        <div class="field">
+                            <label>Zip</label>
+                            <div class="ui input">
+                                <input ng-model="model.propertyAddress.zip" type="text"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="ui basic segment">
+            <button class="ui {{dynamicTheme}} right floated button" ng-click="send()">
+                Submit
+            </button>
+        </div>
+
+    </div>
+</div>
+<div id="lpModalResult" class="ui modal" style="padding: 1em 1em 1em 1em; overflow: auto; height: 80%;">
+  <div id="flexWrap">
+  <!-- <div id="lpModalResultTemp" style="padding: 1em 1em 1em 1em; overflow: auto; height: 80%"> -->
+
+      <div class="header {{dynamicTheme}}"><i ng-click="closeModalResult()" class="close icon"></i> Rates</div>
+      <div class="headerWrap">
+        <h3 class="ui top attached {{dynamicTheme}}  header">
+            Loan Information {{today|date}}
+        </h3>
+        <a href="#newSearch" class="ui button newSearch">New Search</a>
+      </div>
+      <h3 id="newSearch" class="ui top attached {{dynamicTheme}}  header">
+          New Search
+      </h3>
+      <div class="content ui attached {{dynamicTheme}} segment">
+
+          <div class="ui three column middle aligned very relaxed stackable grid">
+              <div class="column">
+                  <div class="mainFrm content">
+                      <div class="inline fields">
+                          <div class="field">
+                              <label>Loan Purpose</label> <select
+                                  ng-model="shareRate.miniPricerPref.search.loanPurpose"
+                                  ng-options="o.key as o.label for o in loanPurposeTypes"
+                              ></select>
+                          </div>
+                      </div>
+                      <div class="inline fields">
+                          <div class="field">
+                              <label>Property Type</label> <select
+                                  ng-model="shareRate.miniPricerPref.search.propertyType"
+                                  ng-options="o.key as o.label for o in ::propertyTypes"
+                              ></select>
+                          </div>
+                      </div>
+                      <div class="inline fields">
+                          <div class="field">
+                              <label>Occupancy</label> <select
+                                  ng-model="shareRate.miniPricerPref.search.propertyUse"
+                                  ng-options="o.key as o.label for o in propertyUseTypes"
+                              ></select>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+              <div class="divider-column">
+                  <div class="ui vertical divider">
+                    Or
+                  </div>
+              </div>
+
+              <div class="column">
+                  <div class="mainFrm content">
+
+                      <div class="inline fields">
+                          <div class="field">
+                              <label>Home Value</label>
+                              <div class="ui input">
+                                  <input ng-model="shareRate.miniPricerPref.search.homeValue"
+                                      format="currencyNoCents" type="text"
+                                  />
+                              </div>
+                          </div>
+                      </div>
+                      <div class="inline fields">
+                          <div class="field">
+                              <label>Loan Amount</label>
+                              <div class="ui input">
+                                  <input ng-model="shareRate.miniPricerPref.search.amount"
+                                      format="currencyNoCents" type="text"
+                                  />
+                              </div>
+                          </div>
+                      </div>
+                      <div class="inline fields">
+                          <div class="field">
+                              <label>Credit Score</label> <select
+                                  ng-model="shareRate.miniPricerPref.search.fico"
+                                  ng-options="o.key as o.label for o in ::ficoRange"
+                              ></select>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="divider-column">
+                  <div class="ui vertical divider">
+                    Or
+                  </div>
+              </div>
+              <div class="column">
+                  <div class="mainFrm content">
+                      <div class="fields">
+                          <div class="field">
+                              <label>City</label>
+                              <div class="ui input">
+                                  <input type="text" placeholder="City" ng-model="vars.city" disabled="disabled"/>
+                              </div>
+                          </div>
+                          <div class="field">
+                              <label>Zip</label>
+                              <div class="ui input">
+                                  <input type="text" ng-model="shareRate.miniPricerPref.search.zip"
+                                      placeholder="Zip"
+                                  />
+                              </div>
+                          </div>
+                          <div class="field">
+                              <label>State</label>
+                              <div class="ui input">
+                                  <input type="text" ng-model="vars.state" disabled="disabled"
+                                      placeholder="State"
+                                  />
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="content ui attached {{dynamicTheme}} segment">
+      	<div>
+
+  	    	<a class="ui tiny {{dynamicTheme}} button" style="cursor: pointer; margin-right: 1em;" ng-click="vars.showMorePricing = !vars.showMorePricing">
+  	    		<i class="icon angle double {{vars.showMorePricing? 'up': 'right'}}"></i>
+  	    		{{vars.showMorePricing? 'Less Pricing': 'More Pricing'}}
+  	    	</a>
+  	    	<div style="display: inline-block;" ng-if="!vars.showMorePricing">
+
+  		        <div class="ui {{dynamicTheme}} tiny label">
+  		          Lock {{shareRate.miniPricerPref.search.lockDays}} Days
+  		        </div>
+  		        <div class="ui teal tiny label" ng-if="!shareRate.miniPricerPref.search.escrowWaiver">
+  		          Escrow
+  		        </div>
+  		        <div class="ui teal tiny label" ng-if="shareRate.miniPricerPref.search.showVA">
+  		          VA Eligible
+  		        </div>
+  		        <div class="ui teal tiny label" ng-if="shareRate.miniPricerPref.search.secondLoanOption && shareRate.miniPricerPref.search.secondLoanAmount > 0">
+  		          Second Loan of {{shareRate.miniPricerPref.search.secondLoanAmount|currency:$:0}}
+  		        </div>
+  	    	</div>
+      	</div>
+      	<div ng-if="vars.showMorePricing">
+
+      		<div class="ui three column middle aligned very relaxed stackable grid">
+      			<div class="column">
+      			</div>
+  	    		<div class="column">
+
+  		    		<div class="mainFrm content">
+  		    			<div class="inline fields">
+  			                <div class="field">
+  			                    <label>Day Locks</label>
+  			                    <select
+  			                        ng-model="shareRate.miniPricerPref.search.lockDays"
+  			                        ng-options="o as (o + ' Days') for o in dayLocksList"
+  			                    ></select>
+  			                </div>
+  			            </div>
+  			            <div class="inline fields">
+  			                <div class="field">
+  			                    <label>Escrow</label>
+  			                    <select
+  			                        ng-model="shareRate.miniPricerPref.search.escrowWaiver"
+  			                        ng-options="o.key as o.label for o in [{key: true, label: 'No'},{key: false, label: 'Yes'}]"
+  			                    ></select>
+  			                </div>
+  			            </div>
+  			            <div class="inline fields">
+  			                <div class="field">
+  			                    <label>VA eligible ?</label>
+  			                    <select
+  			                        ng-model="shareRate.miniPricerPref.search.showVA"
+  			                        ng-options="o.key as o.label for o in [{key: true, label: 'Yes'},{key: false, label: 'No'}]"
+  			                    ></select>
+  			                </div>
+  			            </div>
+  					</div>
+  	    		</div>
+
+  				<div class="divider-column">
+  	                <div class="ui vertical divider">
+  	                  Or
+  	                </div>
+  	            </div>
+
+
+  	            <div class="column">
+
+  		    		<div class="mainFrm content">
+  			            <div class="inline fields">
+  			                <div class="field">
+  			                    <label>2nd Loan</label>
+  			                    <select
+  			                        ng-model="shareRate.miniPricerPref.search.secondLoanOption"
+  			                        ng-options="o.key as o.label for o in [{key: true, label: 'Yes'},{key: false, label: 'No'}]"
+  			                    ></select>
+  			                </div>
+  			            </div>
+  			            <div class="inline fields">
+  			                <div class="field">
+  			                    <label>2nd Loan Amount</label>
+  			                    <div class="ui input">
+  	                                <input ng-model="shareRate.miniPricerPref.search.secondLoanAmount" ng-disabled="!shareRate.miniPricerPref.search.secondLoanOption"
+  	                                    format="currencyNoCents" type="text"
+  	                                />
+  	                            </div>
+  			                </div>
+  			            </div>
+  					</div>
+  	    		</div>
+      		</div>
+      	</div>
+      </div>
+
+      <div class="ui message center aligned " ng-if="!searching && displayNoRateMessage">
+  	   		<p style="color:grey">No programs available</p>
+      </div>
+
+      <div class="ui basic segment">
+          <button class="ui {{dynamicTheme}} button" ng-click="searchFunction()">
+              Search
+          </button>
+      </div>
+
+      <div ng-if="searching" style="width: 256px; margin: auto" class="fade">
+          <img src="{{rootPath}}images/loading.gif">
+      </div>
+
+      <table class="ui single line {{dynamicTheme}} table fadeRes tableResult"
+          ng-if="!searching && displayResultBaseLTV(s) && displayResultBaseEmpty(s, results[$index]) && displayResultBaseVA(s, results[$index]) && displayResultBase2ndLoan(s, results[$index])"
+          ng-repeat="s in shareRate.miniPricerPref.search.loanCriterias track by $index" >
+          <thead>
+              <tr>
+                  <th colspan="6">
+                      <span>
+                          {{s.name}}
+                      </span>
+                      <button ng-if="results[$index] != null" class="ui {{dynamicTheme}} tiny right floated button"
+                          ng-click="chooseRate($event, shareRate.miniPricerPref.search, s, results[$index][0])">
+                          Save Now
+                      </button>
+                  </th>
+              </tr>
+              <tr>
+                  <th>Rate</th>
+                  <th>APR</th>
+                  <th>Points</th>
+                  <th>Closing Cost</th>
+                  <th>Payment</th>
+                  <th>Details</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr ng-if="results[$index] == null">
+                  <td colspan="6">
+                      No Rate Found
+                  </td>
+              </tr>
+              <tr ng-repeat-start="r in results[$index]">
+                  <td>{{r.adjustedRates|number:3}} %</td>
+                  <td>{{r.apr|number:3}} %</td>
+                  <td>{{r.adjustedPoints|number:3}}</td>
+                  <td>{{r.finalClosingCost|currency:$:0}}</td>
+                  <td>{{r.monthlyPayment.monthlyPI|currency:$:0}}</td>
+                  <td>
+                      <a style="cursor: pointer;" ng-click="tableResultClick(r.id)">View</a>
+                  </td>
+              </tr>
+              <tr ng-repeat-end ng-if="vars.tableResult[r.id] == true" class="trDetails">
+                  <td colspan="6" id="{{r.id}}">
+                      <div class="ui top attached tabular menu">
+                          <a class="item active" data-tab="cc" ng-click="vars.tableResultTab[r.id] = 'cc'">Closing Cost</a>
+                          <a class="item" data-tab="ph">Product Highlights</a>
+                          <a class="item" data-tab="d">Disclosures</a>
+                      </div>
+                      <div class="ui bottom attached active tab segment" data-tab="cc">
+                          <table class="ui table">
+                              <tbody>
+                                  <tr ng-repeat="cd in r.closingCostDetails">
+                                      <td>{{mapping(cd)}}</td>
+                                      <td>{{cd.amount|currency:$:0}}</td>
+                                  </tr>
+                              </tbody>
+                              <tfoot class="full-width" style="font-weight: bold;">
+                                  <tr>
+                                      <td>Total</td>
+                                      <td>
+                                          {{r.finalClosingCost|currency:$:0}}
+                                      </td>
+                                  </tr>
+                              </tfoot>
+                          </table>
+
+                          <div class="ui divider"></div>
+                          <div ng-if="s.noticeConf.closingCostNotices == ''" dynamic="shareRate.miniPricerPref.noticeConf.closingCostNotices">
+
+                          </div>
+                          <div ng-if="s.noticeConf.closingCostNotices != ''" dynamic="s.noticeConf.closingCostNotices">
+
+                          </div>
+
+
+                      </div>
+
+                      <div class="ui bottom attached tab segment" data-tab="ph" style="white-space: normal;" >
+                          <div ng-if="s.noticeConf.productDescription == ''" dynamic="shareRate.miniPricerPref.noticeConf.productDescription">
+
+                          </div>
+                          <div ng-if="s.noticeConf.productDescription != ''" dynamic="s.noticeConf.productDescription">
+
+                          </div>
+                      </div>
+
+                      <div class="ui bottom attached tab segment" data-tab="d" style="white-space: normal;">
+  						<div ng-if="s.noticeConf.disclosure == ''" dynamic="shareRate.miniPricerPref.noticeConf.disclosure">
+
+                          </div>
+                          <div ng-if="s.noticeConf.disclosure != ''" dynamic="s.noticeConf.disclosure">
+
+                          </div>
+                      </div>
+
+                  </td>
+              </tr>
+         </tbody>
+     </table>
+  </div> <!-- end flex wrap -->
+
+
+</div>
+<style>
+/*     .red { */
+/*         color: red; */
+/*     } */
+/*     .pink { */
+/*         color: pink; */
+/*     } */
+/*     .purple { */
+/*         color: purple; */
+/*     } */
+/*     .blue { */
+/*         color: blue; */
+/*     } */
+/*     .cyan { */
+/*         color: cyan; */
+/*     } */
+/*     .teal { */
+/*         color: teal; */
+/*     } */
+/*     .green { */
+/*         color: green; */
+/*     } */
+/*     .lime { */
+/*         color: lime; */
+/*     } */
+/*     .yellow { */
+/*         color: yellow; */
+/*     } */
+/*     .amber { */
+/*         color: amber; */
+/*     } */
+/*     .orange { */
+/*         color: orange; */
+/*     } */
+/*     .brown { */
+/*         color: brown; */
+/*     } */
+/*     .grey { */
+/*         color: grey; */
+/*     } */
+
+/* wav styles */
+
+    .ui.button#getRates {
+      background: #34a55c;
+      color: white;
+      box-shadow: 2px 2px 2px #888888;
+    }
+
+    #flexWrap{
+      display: flex !important;
+      flex-direction: column;
+    }
+
+    .ui.top.attached.header {
+        order: 0;
+    }
+
+    .ui.table[class*="single line"] {
+    white-space: nowrap;
+    order: 1;
+    }
+
+    .ui.attached:not(.message)+.ui.attached.segment:not(.top) {
+      margin-top: 1em;
+    }
+
+    .headerWrap{
+      display: flex;
+      flex-direction: row;
+    }
+
+  /*newSearch buttona at top*/
+    .newSearch{
+      width: 9em;
+      margin-left: auto !important;
+      height: 2.5em;
+    }
+
+    .ui.attached.header {
+      border: none;
+    }
+
+    #newSearch{
+      order: 9;
+      margin-top: 2em;
+    }
+
+    .ui.modal>#flexWrap>.content {
+      display: block;
+      width: 100%;
+      font-size: 1em;
+      line-height: 1.4;
+      padding: 1.5rem;
+      background: #fff;
+      order: 10;
+      border-top: 1px solid #d4d4d5;
+    }
+
+    .ui.basic.segment {
+        background: none transparent;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        order: 11;
+    }
+/* end wav styles*/
+
+    .ui.form .field>label.error {
+        font-size: 0.8em;
+        color: orange
+    }
+
+    .hide {
+        display: none
+    }
+    .trDetails {
+        background-color: rgb(240,240,240);
+    }
+    .tableResult {
+        margin-bottom: 1em;
+    }
+
+    .divider-column {
+      position: relative;
+      padding: 0 !important;
+    }
+    /* standard select styling */
+    select {
+    	background: #fff url("http://punkchip.com/images/select-arrows.png")
+    		no-repeat 100% 50%;
+    	border: 1px solid #ccc;
+    	border-radius: 3px;
+    	padding: 0.5em 0.75em;
+    	-webkit-appearance: button;
+    }
+
+    /* remove arrows from Firefox */
+    @
+    -moz-document url-prefix () { .select-wrap {
+    	border: 1pxsolid #ccc;
+    	border-radius: 3px;
+    	display: inline-block;
+    	position: relative;
+    }
+
+    .select-wrap:before {
+    	content: " ";
+    	background: transparent
+    		url("http://punkchip.com/images/select-arrows.png") no-repeat 50% 50%;
+    	position: absolute;
+    	right: 0;
+    	top: 50%;
+    	width: 20px;
+    	height: 15px;
+    	margin-top: -8px;
+    	display: inline-block;
+    	pointer-events: none;
+    }
+
+    select {
+    	-moz-appearance: treeitem;
+    }
+
+    }
+    /* remove arrows from IE10 */
+    select::-ms-expand {
+    	display: none;
+    }
+
+    #priceQuoteId {
+    	width: 330px;
+    }
+    #lpModalResult {
+        zoom: 90%;
+    }
+
+
+
+    .mainFrm {
+    /* 	width: 330px; */
+    }
+
+    .mainFrm label {
+    	display: inline-block;
+    	width: 110px;
+    	text-align: left;
+    }
+
+
+
+    .mainFrm input, select {
+    	margin-top: 5px;
+    	margin-bottom: 5px;
+    	display: inline-block;
+    	*display: inline; /* for IE7*/
+    	zoom: 1; /* for IE7*/
+    	vertical-align: middle;
+    	width: 187px;
+    }
+    .mainFrm div .ui.input {
+        margin-bottom: 5px;
+    }
+    .mainFrm div .ui.input input {
+    	text-align: right;
+        width: 187px;
+    }
+
+
+
+    .fade {
+       -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+    }
+    .fadeRes {
+       -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+    }
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    /* Internet Explorer */
+    @-ms-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    /* Opera < 12.1 */
+    @-o-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    div.ui.dimmer.modals.page.transition.visible.active {
+    	z-index: 1000;
+    }
+
+
+</style>
