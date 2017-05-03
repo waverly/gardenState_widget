@@ -107,7 +107,9 @@
 </div>
 <div id="lpModalThanksSubmitContact" class="ui modal" style="padding: 1em 1em 1em 1em; z-index: 10000">
     <i class="close icon"></i>
-    <div class="content" style="color:{{dynamicTheme}}">Your selection has been submitted.</div>
+    <div class="content" style="color:{{dynamicTheme}}"> Thanks for submitting your information. If you would like to start your application,
+      <a href="https://blink.mortgage/app/signup/p/gsl">click here.</a>
+    </div>
 </div>
 <div id="lpModalContact" class="ui modal" style="padding: 1em 1em 1em 1em; z-index: 10000">
     <i class="close icon"></i>
@@ -463,10 +465,12 @@
                       <span>
                           {{s.name}}
                       </span>
+                      <a href="https://blink.mortgage/app/signup/p/gsl" class="ui tiny right floated button">Apply Now</a>
                       <button ng-if="results[$index] != null" class="ui {{dynamicTheme}} tiny right floated button"
                           ng-click="chooseRate($event, shareRate.miniPricerPref.search, s, results[$index][0])">
-                          Save Now
+                          Save Rates
                       </button>
+
                   </th>
               </tr>
               <tr>
