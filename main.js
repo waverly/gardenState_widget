@@ -40,17 +40,8 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
     'ngMessages', 'internationalPhoneNumber',
     'ngAnimate', 'mdAccordion'
   ]);
-  if (template && template.length > 0) {
-    if (window.location.hostname !== "live-rates.gardenstateloans.com") {
-      var attribute = "'" + window.location.href + "/miniWidget/mini-pricer.html'";
-      $('#'+elementId).attr("ng-include","'"+rootPath +"ang-app/view/template/widget/" + template + "/mini-pricer.html'")
-    } else {
-      var attribute = "'"+rootPath +"ang-app/view/template/widget/" + template + "/mini-pricer.html'"
-    }
-    $('#'+elementId).attr("ng-include", attribute)
-  } else {
-    $('#'+elementId).attr("ng-include","'"+rootPath +"ang-app/view/template/widget/default/mini-pricer.html'")
-  }
+
+  $('#'+elementId).attr("ng-include","'/" + template + "/mini-pricer.html'")
 
   app.directive('dynamic', function($compile) {
     return {
