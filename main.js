@@ -13,6 +13,13 @@ loadCSS = function(href) {
 
 loadCSS("https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css");
 
+function scrollToNewSearch() {
+  var newSearchDiv = $('#newSearch');
+  var container = $('#lpModalResult');
+  var diff = container.scrollTop() + newSearchDiv.position().top;
+  container.scrollTop(diff);
+  console.log(diff);
+}
 
 $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), function( data, textStatus, jqxhr ) {
   var elementId =  'mini-price-id';
@@ -361,14 +368,18 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
 
             var data = {};
             data.emailData = emailData;
-            $.ajax({
-              type: 'POST',
-              url:'https://hooks.zapier.com/hooks/catch/1979434/1x55u9/',
-              data: data,
-              success: function(data, err) {
-                console.log(data, err);
-              }
-            })
+            if (window.location.hostname !== 'localhost') {
+              $.ajax({
+                type: 'POST',
+                url:'https://hooks.zapier.com/hooks/catch/1979434/1x55u9/',
+                data: data,
+                success: function(data, err) {
+                  console.log(data, err);
+                }
+              })
+            } else {
+              console.log('Not sending notification, dummy data:', data.emailData);
+            }
         }
 
         $scope.searchFunction = function(initialSearch) {
