@@ -334,9 +334,8 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
           });
         }
 
-        $scope.searchFunction = function(initialSearch) {
-          if (initialSearch) {
-            console.log("$$$$")
+        function sendEmailNotification(ipAddress) {
+            console.log("*****");
             var originalSearch = $scope.shareRate.miniPricerPref.search;
             // console.log($scope.shareRate.miniPricerPref.originalSearch);
             // Send an email to Zapier, to send to everyone
@@ -344,6 +343,7 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
             emailData.fullName = originalSearch.fullName;
             emailData.emailAddress = originalSearch.emailAddress;
             emailData.phoneNumber = originalSearch.phoneNumber;
+            emailData.ipAddress = ipAddress;
             emailData.loanPurpose = originalSearch.loanPurpose;
             emailData.propertyType = originalSearch.propertyType;
             emailData.propertyUse = originalSearch.propertyUse;
@@ -351,6 +351,7 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
             emailData.amount = originalSearch.amount;
             emailData.zip = originalSearch.zip;
             emailData.fico = originalSearch.fico;
+
             var config = {
               'headers': {'Content-Type': 'application/json'}
             }
@@ -362,14 +363,28 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
             var data = {};
             data.emailData = emailData;
             console.log(data);
+            // $.ajax({
+            //   type: 'POST',
+            //   url:'https://hooks.zapier.com/hooks/catch/1979434/1x55u9/',
+            //   data: data,
+            //   success: function(data, err) {
+            //     console.log(data, err);
+            //   }
+            // })
+        }
+
+        $scope.searchFunction = function(initialSearch) {
+          if (initialSearch) {
             $.ajax({
-              type: 'POST',
-              url:'https://hooks.zapier.com/hooks/catch/1979434/1x55u9/',
-              data: data,
-              success: function(data, err) {
-                console.log(data, err);
+              url: "https://api.ipify.org?format=json",
+              success: function (response) {
+                sendEmailNotification(response.ip)
+              },
+              error: function (error) {
+                sendEmailNotification('Service Unavailable')
               }
             })
+
           }
           $scope.searching = true;
           $scope.setLoanAmounts();
