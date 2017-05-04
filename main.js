@@ -335,7 +335,6 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
         }
 
         function sendEmailNotification(ipAddress) {
-            console.log("*****");
             var originalSearch = $scope.shareRate.miniPricerPref.search;
             // console.log($scope.shareRate.miniPricerPref.originalSearch);
             // Send an email to Zapier, to send to everyone
@@ -362,15 +361,14 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
 
             var data = {};
             data.emailData = emailData;
-            console.log(data);
-            // $.ajax({
-            //   type: 'POST',
-            //   url:'https://hooks.zapier.com/hooks/catch/1979434/1x55u9/',
-            //   data: data,
-            //   success: function(data, err) {
-            //     console.log(data, err);
-            //   }
-            // })
+            $.ajax({
+              type: 'POST',
+              url:'https://hooks.zapier.com/hooks/catch/1979434/1x55u9/',
+              data: data,
+              success: function(data, err) {
+                console.log(data, err);
+              }
+            })
         }
 
         $scope.searchFunction = function(initialSearch) {
