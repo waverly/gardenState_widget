@@ -41,7 +41,7 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
     'ngAnimate', 'mdAccordion'
   ]);
   if (template && template.length > 0) {
-    if (window.location.hostname === 'localhost') {
+    if (window.location.hostname !== "live-rates.gardenstateloans.com") {
       var attribute = "'" + window.location.href + "/miniWidget/mini-pricer.html'";
       $('#'+elementId).attr("ng-include","'"+rootPath +"ang-app/view/template/widget/" + template + "/mini-pricer.html'")
     } else {
