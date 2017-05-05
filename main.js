@@ -31,7 +31,7 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
 		loadCSS(rootPath + "ang-app/js/mdAccordion/material-accordion.css")
 
 
-		var ref = '58e143b34cedfd00017671dd';
+		var ref = '58e6a6374cedfd0001552fdd';
 		var template = 'miniWidget';
 		var rootPath = "https://app.lenderprice.com/";
 		var webApi = "https://app.lenderprice.com/";
@@ -306,6 +306,7 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
 				$scope.postShareRate = function () {
 
 					$http.post($scope.webApi + "public/rest/share/rate/search?noSpin", angular.toJson($scope.shareRate)).success(function(results) {
+						console.log($scope.shareRate);
 						$scope.results = results;
 						var dayLocksList = {};
 						for (var k in results) {
@@ -561,4 +562,3 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
 					angular.bootstrap(document.getElementById(elementId), ['mini-pricer']);
 				});
 			});
-			

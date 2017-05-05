@@ -1,0 +1,741 @@
+{
+    "id": "58e6a6374cedfd0001552fdd",
+    "mergeSet": null,
+    "company": {
+        "id": "58dd70384cedfd0001fac2f0",
+        "mergeSet": null,
+        "createdBy": null,
+        "creationDate": "2017-05-05T19:46:18Z",
+        "modifiedBy": null,
+        "modifiedDate": "2017-05-05T19:46:18Z",
+        "name": "Garden State Home Loans",
+        "shortName": "Garden State Home Loans",
+        "guideLines": false,
+        "turnTimes": [],
+        "nmlsId": "473163",
+        "allowPublicReview": false
+    },
+    "user": {
+        "id": "58cb06694cedfd00010e193b",
+        "mergeSet": null,
+        "username": "jdejoseph",
+        "nmlsId": null,
+        "email": "jd@gardenstateloans.com",
+        "person": {
+            "id": "58cb06694cedfd00010e193c",
+            "mergeSet": null,
+            "firstname": "Justin",
+            "lastname": "DeJoseph",
+            "middlename": null,
+            "sex": null,
+            "birthDate": null,
+            "title": null,
+            "address": {
+                "longitude": null,
+                "latitude": null,
+                "censustract": "",
+                "street": "2091 Springdale Dr",
+                "streetCont": "St 16",
+                "city": "Cherry Hill",
+                "zip": "08003",
+                "zipExt": "",
+                "state": "NJ",
+                "province": "",
+                "county": "",
+                "countyName": "",
+                "country": "US"
+            },
+            "contactDetails": {
+                "email": "jd@gardenstateloans.com",
+                "phone": null,
+                "fax": null,
+                "mobile": "6096812636"
+            }
+        }
+    },
+    "name": "Garden",
+    "flyerSharePref": null,
+    "miniPricerPref": {
+        "@class": "com.cre8techlabs.entity.rate.share.miniPricer.MiniPricerSharePref",
+        "id": "58e6a6374cedfd0001552fdd",
+        "mergeSet": null,
+        "createdBy": "jdejoseph",
+        "creationDate": "2017-04-06T20:33:59Z",
+        "modifiedBy": "jdejoseph",
+        "modifiedDate": "2017-05-01T18:54:51Z",
+        "companyId": "58dd70384cedfd0001fac2f0",
+        "userId": "58cb06694cedfd00010e193b",
+        "name": "Garden",
+        "originalSearch": {
+            "id": "590782bd4cedfd0001e105bd",
+            "mergeSet": null,
+            "createdBy": null,
+            "creationDate": "2017-05-01T18:47:25Z",
+            "modifiedBy": null,
+            "modifiedDate": "2017-05-01T18:47:25Z",
+            "hideSettings": null,
+            "name": null,
+            "companyId": "58dd70384cedfd0001fac2f0",
+            "criteria": {
+                "id": "590782bd4cedfd0001e105be",
+                "mergeSet": null,
+                "createdBy": null,
+                "creationDate": "2017-05-01T18:47:25Z",
+                "modifiedBy": null,
+                "modifiedDate": "2017-05-01T18:47:25Z",
+                "date": "2017-05-01T18:47:25Z",
+                "purchasePrice": 500000,
+                "loanAmount": 400000,
+                "rehabBudget": 0,
+                "subordinateLoanAmount": 0,
+                "pmiType": "None",
+                "monthlyIncome": 5000,
+                "monthlyDebt": 2150,
+                "loanYear": 30,
+                "loanPurpose": "Purchase",
+                "loanType": "Fixed",
+                "mortgageTypes": ["Conventional"],
+                "mortgageLimit": "Conforming",
+                "fhaMortgageLimit": 379500,
+                "propertyUse": "PrimaryResidence",
+                "ownProperties": 0,
+                "specialMortgageOptions": [],
+                "inclusive": false,
+                "varaiableLoanTypes": [],
+                "fico": 760,
+                "ltv": 0.8,
+                "escrowWaiver": false,
+                "lenderFeeWaiver": true,
+                "dti": 0.43,
+                "cltv": 0.8,
+                "loanDownPayement": 100000,
+                "subordinate": false
+            },
+            "property": {
+                "id": "590782bd4cedfd0001e105bf",
+                "mergeSet": null,
+                "createdBy": null,
+                "creationDate": "2017-05-01T18:47:25Z",
+                "modifiedBy": null,
+                "modifiedDate": "2017-05-01T18:47:25Z",
+                "address": {
+                    "longitude": null,
+                    "latitude": null,
+                    "censustract": "",
+                    "street": "",
+                    "streetCont": "",
+                    "city": "Cherry Hill",
+                    "zip": "08003",
+                    "zipExt": "",
+                    "state": "NJ",
+                    "province": "",
+                    "county": "34007",
+                    "countyName": "CAMDEN",
+                    "country": "US"
+                },
+                "propertyType": "SingleFamily",
+                "numberOfUnit": 1,
+                "bedrooms": 0,
+                "bathrooms": 0,
+                "finishedSqFt": 0,
+                "lotSizeSqFt": 0,
+                "lotSizeAcre": 0,
+                "yearBuilt": 0,
+                "mls": "",
+                "totalRooms": 0,
+                "propertyDescription": "",
+                "price": 0,
+                "priceDate": "",
+                "hoa": 0,
+                "taxAssessment": 0,
+                "taxAssessmentYear": "",
+                "propertyTaxPercent": 0,
+                "propertyTaxYear": "",
+                "lastSoldPrice": 0,
+                "lastSoldDate": "",
+                "jsonImages": [],
+                "links": [],
+                "forSale": false,
+                "features": [],
+                "constructions": [],
+                "facts": []
+            },
+            "brokerCriteria": {
+                "id": "590782bd4cedfd0001e105c0",
+                "mergeSet": null,
+                "createdBy": null,
+                "creationDate": "2017-05-01T18:47:25Z",
+                "modifiedBy": null,
+                "modifiedDate": "2017-05-01T18:47:25Z",
+                "minimunCompensation": null,
+                "maxCompensation": null,
+                "overrideExistingComplan": false,
+                "compPlan": -0.75,
+                "rateTypes": [],
+                "view": "LenderPaid",
+                "dayLocks": 30,
+                "dayLocksList": [15, 30, 45, 60],
+                "ausList": ["None", "LP", "DU"],
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": null,
+                    "to": null
+                },
+                "displayConventionalRate": false
+            },
+            "accessCriteria": {
+                "id": "590782bd4cedfd0001e105c1",
+                "mergeSet": null,
+                "marketPlaceSearch": false,
+                "accessPortal": null,
+                "companyIds": ["54cd60543004de9a9e07ca4d"],
+                "companyMap": {
+                    "54cd60543004de9a9e07ca4d": "UWM - United Wholesale Mortgage"
+                },
+                "ratePeriodMap": {}
+            },
+            "miCriteria": {
+                "miCompanyId": null,
+                "miCompanyName": null,
+                "amortizationType": "FullyAmmortized",
+                "loanType": "Fixed",
+                "duLpDecision": "DU_Approve_Eligible",
+                "buyDownPercent": "None",
+                "originationChannel": "Retail",
+                "loanProgram": null,
+                "renewalType": "Constant",
+                "paymentPlan": "EZMonthly",
+                "paymentType": "Monthly",
+                "coBorrowerFicoScore": null,
+                "varaiableLoanType": null
+            },
+            "rateGridIds": [],
+            "rateProgramIds": [],
+            "ratePeriodIds": [],
+            "test": false,
+            "filter": {
+                "programNames": []
+            },
+            "globalGroupAdjustmentMap": {},
+            "showDisqualify": false,
+            "showDisqualifyRules": false,
+            "sortAscPoints": true,
+            "showUnmatchCompPlan": true,
+            "closingCost": {
+                "closingCostGroup": [],
+                "settlementCost": {
+                    "origination": {
+                        "othersLabel": "Fee",
+                        "others": 0,
+                        "underwritingLabel": "Underwriting",
+                        "underwriting": 0,
+                        "administrationLabel": "Administration Fee",
+                        "administration": null,
+                        "lenderCreditLabel": "Lender Credit",
+                        "lenderCredit": null,
+                        "total": 0
+                    },
+                    "titleService": {
+                        "overrideTitle": false,
+                        "titleInsuranceLabel": "",
+                        "titleInsurance": 1285,
+                        "borrowerTitlePaidPercentLabel": "ent",
+                        "borrowerTitlePaidPercent": 0,
+                        "overrideEscrow": false,
+                        "escrowCostLabel": "",
+                        "escrowCost": 850,
+                        "borrowerEscrowPaidPercentLabel": "",
+                        "borrowerEscrowPaidPercent": 0,
+                        "notarySignLabel": "Notary Sign",
+                        "notarySign": 0,
+                        "total": 0
+                    },
+                    "thirdPartyServices": {
+                        "appraisalLabel": "Appraisal",
+                        "appraisal": 0,
+                        "taxServiceLabel": "Tax Service",
+                        "taxService": 0,
+                        "creditReportLabel": "Credit Report",
+                        "creditReport": 0,
+                        "floodCertificationLabel": "Floor Certification",
+                        "floodCertification": 0,
+                        "overnightLabel": "Overnight",
+                        "overnight": 0,
+                        "recordingLabel": "Recording",
+                        "recording": 0,
+                        "total": 0
+                    },
+                    "closingCostGroup": [],
+                    "total": 0
+                },
+                "useErnstCost": false,
+                "allowErnstQuote": false,
+                "closingCostVersion": "V2",
+                "total": 0
+            },
+            "rate": null,
+            "rates": [],
+            "rateRange": {
+                "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                "from": null,
+                "to": null
+            },
+            "maxListingPerRate": 15,
+            "date": null
+        },
+        "miniPricerTemplate": "miniWidget",
+        "theme": "cyan",
+        "dlgTitle": "Contact Info",
+        "dlgMsg": "Let us know where to send your rates or <a href=\"https://blink.mortgage/app/signup/p/gsl\" target=\"_blank\">apply now</a> to lock them in.",
+        "miniPricerContacts": [{
+            "id": "58f109364cedfd0001528dad",
+            "mergeSet": null,
+            "firstname": "Justin",
+            "lastname": "DeJoseph",
+            "middlename": null,
+            "sex": null,
+            "birthDate": null,
+            "title": null,
+            "address": {
+                "longitude": null,
+                "latitude": null,
+                "censustract": "",
+                "street": "",
+                "streetCont": "",
+                "city": "",
+                "zip": "91101",
+                "zipExt": "",
+                "state": "CA",
+                "province": "",
+                "county": "",
+                "countyName": "",
+                "country": "US"
+            },
+            "contactDetails": {
+                "email": "info@gardenstateloans.com",
+                "phone": "8886124604",
+                "fax": null,
+                "mobile": null
+            }
+        }, {
+            "id": "58f110384cedfd0001531b7e",
+            "mergeSet": null,
+            "firstname": "Steven",
+            "lastname": "Weitzman",
+            "middlename": null,
+            "sex": null,
+            "birthDate": null,
+            "title": null,
+            "address": {
+                "longitude": null,
+                "latitude": null,
+                "censustract": "",
+                "street": "",
+                "streetCont": "",
+                "city": "",
+                "zip": "91101",
+                "zipExt": "",
+                "state": "CA",
+                "province": "",
+                "county": "",
+                "countyName": "",
+                "country": "US"
+            },
+            "contactDetails": {
+                "email": "sw@gardenstateloans.com",
+                "phone": "",
+                "fax": null,
+                "mobile": null
+            }
+        }],
+        "search": {
+            "id": "58e6a6374cedfd0001552fe3",
+            "mergeSet": null,
+            "fico": 760,
+            "loanPurpose": "Purchase",
+            "zip": "08003",
+            "amount": 400000,
+            "downPercent": 20,
+            "homeValue": 500000,
+            "propertyUse": "PrimaryResidence",
+            "propertyType": "SingleFamily",
+            "loanCriterias": [{
+                "id": "58e6a64c4cedfd000155309d",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -3500,
+                    "to": 3500
+                },
+                "selectionType": "First",
+                "limit": 4,
+                "name": "30 Year Fixed",
+                "mortgageType": "Conventional",
+                "loanType": "Fixed",
+                "term": 30,
+                "varaiableLoanType": "_5_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": false,
+                "showWhenEmpty": false,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 95
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58e6a7624cedfd0001554a0b",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -3500,
+                    "to": 2500
+                },
+                "selectionType": "First",
+                "limit": 5,
+                "name": "20 Year Fixed",
+                "mortgageType": "Conventional",
+                "loanType": "Fixed",
+                "term": 20,
+                "varaiableLoanType": "_5_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": false,
+                "showWhenEmpty": false,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 95
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58e6a7a34cedfd0001554ad5",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -3500,
+                    "to": 2500
+                },
+                "selectionType": "First",
+                "limit": 4,
+                "name": "15 Year Fixed",
+                "mortgageType": "Conventional",
+                "loanType": "Fixed",
+                "term": 15,
+                "varaiableLoanType": "_5_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": false,
+                "showWhenEmpty": false,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 95
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58e6a8754cedfd0001557243",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -3000,
+                    "to": 2500
+                },
+                "selectionType": "First",
+                "limit": 4,
+                "name": "10 Year ARM",
+                "mortgageType": "Conventional",
+                "loanType": "Variable",
+                "term": 30,
+                "varaiableLoanType": "_10_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": false,
+                "showWhenEmpty": false,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 95
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58efd6f84cedfd00018acf9d",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -2500,
+                    "to": 2000
+                },
+                "selectionType": "First",
+                "limit": 4,
+                "name": "7 Year ARM",
+                "mortgageType": "Conventional",
+                "loanType": "Variable",
+                "term": 30,
+                "varaiableLoanType": "_7_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": false,
+                "showWhenEmpty": false,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 95
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58efd7574cedfd00018b0ce2",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -2500,
+                    "to": 2000
+                },
+                "selectionType": "First",
+                "limit": 4,
+                "name": "5 Year ARM",
+                "mortgageType": "Conventional",
+                "loanType": "Variable",
+                "term": 30,
+                "varaiableLoanType": "_5_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": false,
+                "showWhenEmpty": true,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 95
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58f0de1e4cedfd00010c8de0",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -2500,
+                    "to": 2000
+                },
+                "selectionType": "First",
+                "limit": 4,
+                "name": "10 Year Fixed",
+                "mortgageType": "Conventional",
+                "loanType": "Fixed",
+                "term": 10,
+                "varaiableLoanType": "_5_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": false,
+                "showWhenEmpty": true,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 95
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58f0de5c4cedfd00010c933f",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -4000,
+                    "to": 2500
+                },
+                "selectionType": "First",
+                "limit": 4,
+                "name": "FHA 30 Year Fixed",
+                "mortgageType": "FHA",
+                "loanType": "Fixed",
+                "term": 30,
+                "varaiableLoanType": "_5_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": false,
+                "showWhenEmpty": true,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 96.5
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58f0de8a4cedfd00010c98a0",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -2500,
+                    "to": 2500
+                },
+                "selectionType": "First",
+                "limit": 6,
+                "name": "VA 30 Year Fixed",
+                "mortgageType": "VA",
+                "loanType": "Fixed",
+                "term": 30,
+                "varaiableLoanType": "_5_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": true,
+                "showWhenEmpty": true,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 100
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58f0deca4cedfd00010cb60f",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -2500,
+                    "to": 2500
+                },
+                "selectionType": "First",
+                "limit": 4,
+                "name": "FHA 15 Year Fixed",
+                "mortgageType": "FHA",
+                "loanType": "Fixed",
+                "term": 15,
+                "varaiableLoanType": "_5_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": false,
+                "showWhenEmpty": true,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 96.5
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58f0def04cedfd00010cdc46",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -2500,
+                    "to": 2000
+                },
+                "selectionType": "First",
+                "limit": 4,
+                "name": "VA 15 Year Fixed",
+                "mortgageType": "VA",
+                "loanType": "Fixed",
+                "term": 15,
+                "varaiableLoanType": "_5_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": true,
+                "showWhenEmpty": true,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 100
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58f0df1c4cedfd00010cf77e",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -2500,
+                    "to": 2000
+                },
+                "selectionType": "First",
+                "limit": 4,
+                "name": "FHA 5 Year ARM",
+                "mortgageType": "FHA",
+                "loanType": "Variable",
+                "term": 30,
+                "varaiableLoanType": "_5_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": false,
+                "showWhenEmpty": true,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 96.5
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }, {
+                "id": "58f0df3e4cedfd00010d14dd",
+                "mergeSet": null,
+                "closingCostRange": {
+                    "@class": "com.cre8techlabs.entity.broker.BrokerCriteria$RangeClosingCost",
+                    "from": -2500,
+                    "to": 2000
+                },
+                "selectionType": "First",
+                "limit": 4,
+                "name": "VA 5 Year ARM",
+                "mortgageType": "VA",
+                "loanType": "Variable",
+                "term": 30,
+                "varaiableLoanType": "_5_1",
+                "showOnlyIfSecondLoan": false,
+                "showOnlyIfVASelected": true,
+                "showWhenEmpty": true,
+                "ltvRange": {
+                    "@class": "com.cre8techlabs.entity.range.DoubleRangeLeGt",
+                    "from": 10,
+                    "to": 100
+                },
+                "noticeConf": {
+                    "closingCostNotices": "",
+                    "productDescription": "",
+                    "disclosure": ""
+                }
+            }],
+            "overrideName": null,
+            "escrowWaiver": false,
+            "lenderFeeWaiver": true,
+            "showVA": false,
+            "secondLoanOption": false,
+            "secondLoanAmount": 0,
+            "lockDays": 30
+        },
+        "noticeConf": {
+            "closingCostNotices": "<h4>Important Notices</h4>\n<ul style='white-space: normal;'>\n    <li>\n        Closing costs based on information you provided and subject to change until you have completed an application and locked your rate. Upon completion of your online application, you will be provided with an online Loan Estimate (official federal disclosure). Upon receipt of online approval, you will be given the opportunity to lock in your rate and guaranteed closing costs. \n    </li>\n    <li>\n      Closing cost displayed either represent a lender cost which is in addition to third party fees or credit which is used to offset third party fees.  Fees for third party service providers are guaranteed as shown, including appraisal and credit report fee. Other third party fees are fees not paid to or controlled by the lender. They include things like Title, Escrow Reserves for Homeowners Insurance, and Property Taxes. Some of these fees you can shop for separately.    </li>\n    <li>\n        Guaranteed fees include only fees customarily paid by buyer. Fees customarily paid by seller that buyer may agree to pay are not included in this guarantee.\n    </li>\n    <li>\n        On purchase transactions under contract, you may lock this rate and guaranteed closing costs online, anytime 24/7. To do so, simply complete an online application which takes about 20 minutes. Upon submission, you will be given an opportunity to lock your rate.\n    </li>\n    <li>\n        On purchase transactions not yet under contract, we encourage you to complete an online application and receive a free Lender Pre-Approval Letter to strengthen your offer. We are unable to lock in a rate until you have a property under contract and out of attorney review. \n    </li>\n</ul>",
+            "productDescription": "<h4>Important Notices</h4>\n<ul style='white-space: normal;'>\n    <li>\n    Loan Program - This is the type of loan, which indicates whether it has a fixed interest rate or an adjustable rate (ARM).\nA fixed interest rate loan is a loan where the interest rate doesn't fluctuate during the fixed rate period of the loan (ex, 30 year fixed loan is fixed for 30 years)\nA variable An adjustable-rate mortgage, or ARM, is a home loan with an interest rate that can change periodically. This means that the monthly payments can go up or down after the initial fixed period of the loan. The ARM rate is locked in for the specified ARM Program. (example - a 7 year ARM is fixed for 7 years, but in year 8 has the ability to adjust up or down depending on the current market)\nAfter the fixed-rate period ends, an ARM's interest rate moves up and down with another interest rate, called the index. The index is an interest rate determined upfront by the lender and published by a neutral party. There are many indexes, and the loan paperwork identifies which index a particular ARM follows.To set the ARM rate, the lender takes the index rate and adds an agreed-upon number of percentage points, called the margin. The index rate can change, but the margin does not.\n</li>\n    <li>\nPros: Generally, the initial interest rate is lower than on a comparable fixed-rate mortgage.\nAfter the fixed-rate period ends, the interest rate can go lower, so monthly payments can fall, too.\nCons: After the fixed-rate period ends, the interest rate can rise, so monthly payments can go up, too.\nInterest rates are unpredictable, so you can't predict what your payments will be in the future.",
+            "disclosure": "<p>\n    At a {{r.adjustedRates|number:3}} % interest rate, the APR for this loan type is {{r.apr|number:3}} %. The monthly payment schedule would be:\n</p>\n<ul>\n    <li>\n        {{r.term * 12 - 1}} payments of {{r.monthlyPayment.monthlyPI|currency:$:0}} at an interest rate of {{r.adjustedRates|number:3}} %\n    </li>\n    <li>\n        1 payment of {{r.monthlyPayment.monthlyPI|currency:$:0}}\n        at an interest rate of {{r.adjustedRates|number:3}} %\n    </li>\n</ul>\n<p>\n    This payment schedule is based on a {{r.loanAmount|currency:$:0}}\n    loan on a {{shareRate.miniPricerPref.search.homeValue|currency:$:0}} property in {{vars.county}}, {{vars.state}}.\n</p>\n<p>\n    If an escrow account is required or requested, the actual monthly payment will also include amounts for real estate taxes and homeowner's insurance premiums.\n</p>"
+        }
+    }
+}
