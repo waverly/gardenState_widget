@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 var rootPath = "https://app.lenderprice.com/";
 var webApi = "https://app.lenderprice.com/";
 
@@ -392,7 +394,8 @@ $.getScript(rootPath+"/public/generatedJs/miniPricer/" + new Date().getTime(), f
 
 
 					var companyId = $scope.shareRate.company.id;
-					if($scope.ernstCompanySettings == null || $scope.ernstServiceDown) {
+					if(!$scope.shareRate.miniPricerPref.originalSearch.closingCost.allowErnstQuote || $scope.ernstCompanySettings == null || $scope.ernstServiceDown) {
+					// if($scope.ernstCompanySettings == null || $scope.ernstServiceDown) {
 						$scope.postShareRate();
 					} else {
 						$scope.wrapperErnst = {

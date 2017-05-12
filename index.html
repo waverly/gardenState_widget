@@ -5,14 +5,23 @@
 	<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
   <script src="main.js"></script>
 	<style>
-    html {
-      font-size: 16px;
-    }
-		div#mini-price-id {
+        html {
+          font-size: 16px;
+        }
+
+        body {
+        }
+
+
+		#mini-price-id {
+			display: none;
 		    margin: auto;
             margin-left: 2em;
             margin-right: 2em;
 
+		}
+		#mini-price-id.ng-scope {
+			display: block;
 		}
         .howToElementId {
             color: red;
