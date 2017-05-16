@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "title": "123",
+    "owner": "f",
+    "description": "abc"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "title": "k",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ],
+    "reviewer": "g"
+  }
+}
