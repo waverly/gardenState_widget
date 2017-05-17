@@ -46,6 +46,12 @@
             color: grey;
             font-style: italic;
         }
+	.garden-orange {
+	    background-color: #faa541 !important;
+	}
+	.garden-green {
+	    background-color: #3baa63 !important;
+	}
     </style>
 </head>
 <body>
@@ -516,8 +522,8 @@
 							                      <span>
 							                          {{s.name}}
 							                      </span>
-							                      <a href="https://blink.mortgage/app/signup/p/gsl" class="ui tiny right floated button">Apply Now</a>
-							                      <button ng-if="results[$index] != null" class="ui {{dynamicTheme}} tiny right floated button"
+							                      <a href="https://blink.mortgage/app/signup/p/gsl" class="ui tiny right floated button garden-orange">Apply Now</a>
+							                      <button ng-if="results[$index] != null" class="ui {{dynamicTheme}} tiny right floated button garden-green"
 							                          ng-click="chooseRate($event, shareRate.miniPricerPref.search, s, results[$index][0])">
 							                          Save Rates
 							                      </button>
@@ -783,6 +789,8 @@
 
 							    #priceQuoteId {
 							    	width: 330px;
+								margin-left: auto;
+								margin-right: auto;
 							    }
 							    #lpModalResult {
 							        zoom: 90%;
